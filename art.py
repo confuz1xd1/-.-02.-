@@ -1,9 +1,10 @@
 PI2 = ['Евгения', 'Надя', 'Тимур'] 
-PI02.append('Артемий')
+PI2.append('Артемий')
 
 
 
-stack = 
+stack = []
 stack.append('Аля')
 stack.append('Уля')
+
 
