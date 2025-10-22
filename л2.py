@@ -1,50 +1,34 @@
-# Через list comprehension для создания вложенного списка имён
-names1 = ['Артемий', 'Тимур']
-names2 = ['Артем', 'Даня']
-names3 = ['Захар', 'Ежик']
-groups = [names1, names2, names3]
+#Пример создания мультисписка (вложенного списка):
+groups = [['Артемий', 'Тимур'], ['Уля', 'Аля'], ['Артем', 'Даня']]
 
 
-# очередь 
+#Пример создания очереди:
+from queue import Queue
+q = Queue()
+q.put(1) 
+q.put(2) 
+q.put(3)
+
+
+#Пример реализации дека:
 from collections import deque
+tasks = deque() 
+tasks.append("task1")
+tasks.append("task2")
+tasks.append("task3") 
 
-q = deque()
-for i in range(1, 4):
-    q.append(i)
-
-while q:
-    print(q.popleft())  # FIFO-поведение
-
-
-#ДЕК 
-
-from collections import deque
-
-tasks = deque(["task1", "task2", "task3"])
-tasks.appendleft("urgent_task")
-while tasks:
-    print(tasks.pop())  # LIFO-поведение (pop с конца)
+#Пр
+имер реализации приоритетной очереди:
+from queue import PriorityQueue 
+q = PriorityQueue()
+q.put((2, 'mid-priority item')) 
+q.put((1, 'high-priority item')) 
+q.put((3, 'low-priority item')) 
 
 
-# Приоритетная очередь через heapq
-import heapq
-
-tasks = []
-heapq.heappush(tasks, (2, "mid-priority item"))
-heapq.heappush(tasks, (1, "high-priority item"))
-heapq.heappush(tasks, (3, "low-priority item"))
-
-
-import heapq
-
-# приоритетная очередь с использованием бинарной кучи
-priority_queue = []
-
-heapq.heappush(priority_queue, (2, 'Задача средней важности'))
-heapq.heappush(priority_queue, (1, 'Срочная задача'))
-heapq.heappush(priority_queue, (3, 'Обычная задача'))
-heapq.heappush(priority_queue, (4, 'Малозначимая задача'))
-
-while priority_queue:
-    priority, task = heapq.heappop(priority_queue)
-    print(f'Выполняется: {task} с приоритетом {priority}')
+#Пример приоритетной очереди с использованием бинарной кучи:
+import heapq   
+heapq.heappush(customers, (2, "Женя")) 
+heapq.heappush(customers, (3, "Захар")) 
+heapq.heappush(customers, (1, "Надя")) 
+heapq.heappush(customers, (4, "Соня")) 
